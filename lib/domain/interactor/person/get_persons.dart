@@ -2,8 +2,8 @@ import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_clear_arch/domain/entities/person_entity.dart';
 import 'package:flutter_clear_arch/domain/exception/failure.dart';
+import 'package:flutter_clear_arch/domain/interactor/base/usecase.dart';
 import 'package:flutter_clear_arch/domain/repositories/person_repository.dart';
-import 'package:flutter_clear_arch/domain/usecases/base/usecase.dart';
 import 'package:meta/meta.dart';
 
 class GetPersons extends UseCase<List<PersonEntity>, PagePersonParams> {
