@@ -6,20 +6,20 @@ import 'package:flutter_clear_arch/domain/interactor/base/usecase.dart';
 import 'package:flutter_clear_arch/domain/repositories/person_repository.dart';
 import 'package:meta/meta.dart';
 
-class FindPerson extends UseCase<List<PersonEntity>, SearchPersonParams> {
+class FindPerson extends UseCase<List<PersonEntity>, FindPersonParams> {
   final PersonRepository personRepository;
 
   FindPerson(this.personRepository);
 
-  Future<Either<Failure, List<PersonEntity>>> call(SearchPersonParams params) async {
+  Future<Either<Failure, List<PersonEntity>>> call(FindPersonParams params) async {
     return await personRepository.searchPerson(params.query);
   }
 }
 
-class SearchPersonParams extends Equatable {
+class FindPersonParams extends Equatable {
   final String query;
 
-  SearchPersonParams({required this.query});
+  FindPersonParams({required this.query});
 
   @override
   List<Object> get props => [query];
