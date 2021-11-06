@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_clear_arch/domain/entities/person_entity.dart';
+import 'package:flutter_clear_arch/presentation/pages/person_detail_screen.dart';
 import 'package:flutter_clear_arch/presentation/resources/app_colors.dart';
 import 'package:flutter_clear_arch/presentation/widget/person_cache_image_widget.dart';
 class PersonCard extends StatelessWidget {
@@ -11,12 +12,12 @@ class PersonCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        /*Navigator.push(
+        Navigator.push(
           context,
           MaterialPageRoute(
             builder: (context) => PersonDetailPage(person: person),
           ),
-        );*/
+        );
       },
       child: Container(
         decoration: BoxDecoration(

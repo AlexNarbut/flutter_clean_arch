@@ -24,3 +24,4 @@ class PersonListScreen extends StatelessWidget{
     );
   }
 }
+

@@ -8,6 +8,8 @@ import 'package:flutter_clear_arch/presentation/bloc/person_list_cubit/person_li
 import 'package:flutter_clear_arch/presentation/bloc/person_list_cubit/person_list_state.dart';
 import 'package:flutter_clear_arch/presentation/widget/person_card_widget.dart';
 
+import 'error_widget.dart';
+
 class PersonsList extends StatefulWidget {
 
   @override
@@ -53,7 +55,11 @@ class _PersonsListState extends State<PersonsList> {
       } else if (state is PersonLoaded) {
         persons = state.personsList;
       } else if (state is PersonError) {
-        return Text(
+        return  AppErrorWidget(error: state.message,onTap:(){
+          context.read<PersonListCubit>().loadPerson();
+        },);
+
+          Text(
           state.message,
           style: TextStyle(color: Colors.white, fontSize: 25),
         );
